@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+
+
+</head>
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <img src="http://animereviews.co/wp-content/uploads/2012/06/Serial-Experiments-Lain-Computer-Room.jpg"
+                class="formbold-form-img">
+            <form action="{{ url_for('submit_survey') }}" method="POST">
+                
+                <div class="formbold-input-group">
+                    <label for="age" class="formbold-form-label"> Пожалуйста, укажите Ваш возраст </label>
+                    <input type="number" name="age" id="age" placeholder="Введите ваш возраст" class="formbold-form-input" required />
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Пожалуйста, укажите Ваш гендер </label>
+                    <select class="formbold-form-select" name="gender" id="gender" required>
+                        <option value="male">Мужской</option>
+                        <option value="female">Женский</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> К какой из сфер относится выбранная Вами специальность обучения? </label>
+                    <select class="formbold-form-select" name="specialization" id="specialization" required>
+                        <option value="humanities">Гуманитарная</option>
+                        <option value="technical">Техническая</option>
+                        <option value="medical">Медицинская</option>
+                        <option value="social">Социальные науки</option>
+                        <option value="economics">Экономика</option>
+                    </select>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие аспекты учебы для Вас были наиболее сложными? </label>
+                    <textarea rows="4" name="study_difficulties" id="study_difficulties" placeholder="Опишите трудности в учебе" class="formbold-form-input"></textarea>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы оцениваете свою готовность к работе по специальности? </label>
+                    <select class="formbold-form-select" name="work_readiness" id="work_readiness" required>
+                        <option value="high">Высокая</option>
+                        <option value="medium">Средняя</option>
+                        <option value="low">Низкая</option>
+                    </select>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие факторы повлияли на Ваше решение в выборе специальности? </label>
+                    <textarea rows="4" name="specialization_factors" id="specialization_factors" placeholder="Опишите ключевые факторы выбора" class="formbold-form-input"></textarea>
+                </div>
+    
+                <div class="formbold-input-radio-wrapper">
+                    <label class="formbold-form-label"> Знаете ли Вы, что представляет собой коучинг? </label>
+                    <div class="formbold-radio-flex">
+                        <label class="formbold-radio-label"><input type="radio" name="coaching_knowledge" value="yes" required /> Да</label>
+                        <label class="formbold-radio-label"><input type="radio" name="coaching_knowledge" value="no" required /> Нет</label>
+                    </div>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы проходили? </label>
+                    <textarea rows="4" name="courses_taken" id="courses_taken" placeholder="Перечислите курсы, которые вы прошли" class="formbold-form-input"></textarea>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы бы хотели пройти? </label>
+                    <textarea rows="4" name="courses_wanted" id="courses_wanted" placeholder="Какие курсы вас интересуют?" class="formbold-form-input"></textarea>
+                </div>
+    
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие три главные цели Вы ставите перед собой в первые 2 года работы? </label>
+                    <textarea rows="4" name="work_goals" id="work_goals" placeholder="Опишите ваши карьерные цели" class="formbold-form-input"></textarea>
+                </div>
+                
+                <button class="formbold-btn">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
