@@ -1,5 +1,7 @@
 fastapi[standard]
-aiosqlite
 jinja2
 aiofiles
 openai
+sqlalchemy
+python-docx
+htmldocx

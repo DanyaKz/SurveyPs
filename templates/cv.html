@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваше CV</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="formbold-form-wrapper">
+
+        <h1 class="formbold-form-title">Результат анализа</h1>
+        <br>
+
+        <div class="formbold-form-content">
+            <h2>Вывод:</h2>
+            <br>
+            <div class="formbold-form-result">
+                {{ gpt_answer.split("<h2>CV:</h2>")[0] | safe }}
+                <br>
+                Примерно таким образом будет выглядеть твоё CV:
+            </div>
+
+            <hr class="formbold-divider">
+
+            <form method="get" action="/download-cv/{{ user_id }}">
+                <button type="submit" class="formbold-btn">Скачать CV (Word)</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

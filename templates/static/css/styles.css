@@ -151,3 +151,75 @@ body {
 .formbold-btn:hover {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
 }
+
+
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  white-space: pre;
+  font-size: 30px;
+  line-height: 1.2em;
+  height:1.2em;
+  overflow: hidden;
+}
+.loader:before {
+  content:"Загрузка...\A⌰агрузка...\A⌰⍜грузка...\A⌰⍜⏃рузка...\A⌰⍜⏃⎅узка...\A⌰⍜⏃⎅⟟ка...\A⌰⍜⏃⎅⟟⋏а...\A⌰⍜⏃⎅⟟⋏☌...\A⌰⍜⏃⎅⟟⋏☌⟒..\A⌰⍜⏃⎅⟟⋏☌⟒⏁.\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔"; 
+  white-space: pre;
+  display: inline-block;
+  animation: l39 1s infinite steps(11) alternate;
+}
+
+@keyframes l39 {
+  100%{transform: translateY(-100%)}
+}
+
+
+/* The Modal (background) */
+.modal {
+  text-align: -webkit-center;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 65%;
+}
+
+.modal-header{
+  color: #474848;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  background: #bcf0ff;
+}
+
+.modal-footer{
+  color: #474848;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  background: #bcf0ff;
+}
+
+.modal-body{
+  color: #474848;
+  margin-bottom: 6%;
+  margin-top: 6%;
+}
+
+.formbold-form-result{
+  line-height: 1.5;
+  letter-spacing: 2px;
+}

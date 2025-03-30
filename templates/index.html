@@ -11,20 +11,20 @@
 <body>
     <div class="formbold-main-wrapper">
         <div class="formbold-form-wrapper">
-            <img src="http://animereviews.co/wp-content/uploads/2012/06/Serial-Experiments-Lain-Computer-Room.jpg"
+            <img src="https://i.pinimg.com/736x/aa/76/e6/aa76e6e2b6181ca70b2806f80ee3493e.jpg"
                 class="formbold-form-img">
-            <form action="{{ url_for('submit_survey') }}" method="POST">
-
+                <form id="surveyForm">
+ 
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> Введите ваш email: </label>
-                    <input type="email" rows="4" name="specialization_factors" id="specialization_factors" placeholder="Опишите ключевые факторы выбора" class="formbold-form-input"></input>
+                    <input type="email" rows="4" name="email" id="email" placeholder="example@abc.com" class="formbold-form-input" required></input>
                 </div>
                 
                 <div class="formbold-input-group">
-                    <label for="age" class="formbold-form-label"> Пожалуйста, укажите Ваш возраст </label>
+                    <label class="formbold-form-label"> Пожалуйста, укажите Ваш возраст </label>
                     <input type="number" name="age" id="age" placeholder="Введите ваш возраст" class="formbold-form-input" required />
                 </div>
-    
+                
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> Пожалуйста, укажите Ваш гендер </label>
                     <select class="formbold-form-select" name="gender" id="gender" required>
@@ -33,7 +33,7 @@
                         <option value="other">Другое</option>
                     </select>
                 </div>
-    
+                
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> К какой из сфер относится выбранная Вами специальность обучения? </label>
                     <select class="formbold-form-select" name="specialization" id="specialization" required>
@@ -44,12 +44,12 @@
                         <option value="economics">Экономика</option>
                     </select>
                 </div>
-    
+                
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> Какие аспекты учебы для Вас были наиболее сложными? </label>
-                    <textarea rows="4" name="study_difficulties" id="study_difficulties" placeholder="Опишите трудности в учебе" class="formbold-form-input"></textarea>
+                    <textarea rows="4" name="study_difficulties" id="study_difficulties" placeholder="Опишите трудности в учебе" class="formbold-form-input" required></textarea>
                 </div>
-    
+                
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> Как Вы оцениваете свою готовность к работе по специальности? </label>
                     <select class="formbold-form-select" name="work_readiness" id="work_readiness" required>
@@ -58,12 +58,47 @@
                         <option value="low">Низкая</option>
                     </select>
                 </div>
-    
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> С какими сложными проектами Вы столкнулись во время учебы? </label>
+                    <textarea rows="4" name="difficult_projects" id="difficult_projects" placeholder="Опишите сложные учебные проекты, с которыми Вы сталкивались" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие проекты или темы вызывают у Вас глубокий интерес? </label>
+                    <textarea rows="4" name="topics_of_interest" id="topics_of_interest" placeholder="Укажите интересующие Вас темы и проекты" class="formbold-form-input" required></textarea>
+                </div>
+                
                 <div class="formbold-input-group">
                     <label class="formbold-form-label"> Какие факторы повлияли на Ваше решение в выборе специальности? </label>
-                    <textarea rows="4" name="specialization_factors" id="specialization_factors" placeholder="Опишите ключевые факторы выбора" class="formbold-form-input"></textarea>
+                    <textarea rows="4" name="specialization_factors" id="specialization_factors" placeholder="Опишите ключевые факторы выбора" class="formbold-form-input" required></textarea>
                 </div>
-    
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие моменты учебы доставили Вам радость и вдохновение? </label>
+                    <textarea rows="4" name="study_joy" id="study_joy" placeholder="Опишите приятные и вдохновляющие моменты учебы" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что Вас мотивирует продолжать учиться и развиваться? </label>
+                    <textarea rows="4" name="study_motivation" id="study_motivation" placeholder="Что помогает Вам двигаться дальше в учебе и развитии?" class="formbold-form-input" required></textarea>
+                </div>
+
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы представляете себе идеальную работу, где Вы полностью вовлечены? </label>
+                    <textarea rows="4" name="ideal_job" id="ideal_job" placeholder="Опишите свою идеальную работу" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какое достижение за период учебы Вы считаете своим самым важным? </label>
+                    <textarea rows="4" name="main_achievement" id="main_achievement" placeholder="Опишите ваше главное достижение в учебе" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы оцениваете свои успехи на пути к выбранной профессии? </label>
+                    <textarea rows="4" name="progress_evaluation" id="progress_evaluation" placeholder="Оцените свой прогресс и успехи" class="formbold-form-input" required></textarea>
+                </div>
+                
                 <div class="formbold-input-radio-wrapper">
                     <label class="formbold-form-label"> Знаете ли Вы, что представляет собой коучинг? </label>
                     <div class="formbold-radio-flex">
@@ -71,26 +106,318 @@
                         <label class="formbold-radio-label"><input type="radio" name="coaching_knowledge" value="no" required /> Нет</label>
                     </div>
                 </div>
-    
-                <div class="formbold-input-group">
-                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы проходили? </label>
-                    <textarea rows="4" name="courses_taken" id="courses_taken" placeholder="Перечислите курсы, которые вы прошли" class="formbold-form-input"></textarea>
-                </div>
-    
-                <div class="formbold-input-group">
-                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы бы хотели пройти? </label>
-                    <textarea rows="4" name="courses_wanted" id="courses_wanted" placeholder="Какие курсы вас интересуют?" class="formbold-form-input"></textarea>
-                </div>
-    
-                <div class="formbold-input-group">
-                    <label class="formbold-form-label"> Какие три главные цели Вы ставите перед собой в первые 2 года работы? </label>
-                    <textarea rows="4" name="work_goals" id="work_goals" placeholder="Опишите ваши карьерные цели" class="formbold-form-input"></textarea>
+                
+                <div class="formbold-input-radio-wrapper">
+                    <label class="formbold-form-label"> Был ли у Вас ранее опыт участия в коучинговой сессии или лекциях по коучингу? </label>
+                    <div class="formbold-radio-flex">
+                        <label class="formbold-radio-label"><input type="radio" name="coaching_experience" value="yes" required /> Да</label>
+                        <label class="formbold-radio-label"><input type="radio" name="coaching_experience" value="no" required /> Нет</label>
+                    </div>
                 </div>
                 
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Если да, то в каком формате это было? (индивидуальные сессии, групповые тренинги, карьерный коучинг и т.д.) </label>
+                    <textarea rows="4" name="coaching_format" id="coaching_format" placeholder="Опишите формат коучинга" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> На Ваш взгляд, полезно ли сотрудничество с коучем для достижения своих целей, поиске профессиональной работы, решении повседневных задач? </label>
+                    <textarea rows="4" name="coaching_value" id="coaching_value" placeholder="Поделитесь своим мнением" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Если бы вам предоставилась возможность работы с коучем в русле профессиональной ориентации, чего Вы хотели бы достичь с помощью коучинга? </label>
+                    <textarea rows="4" name="coaching_goals" id="coaching_goals" placeholder="Опишите желаемые цели и результаты" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какой результат Вы бы хотели увидеть по итогам профессионально ориентированной коучинг-сессии? Опишите его. </label>
+                    <textarea rows="4" name="coaching_expected_result" id="coaching_expected_result" placeholder="Опишите желаемый результат после коучинга" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы оцениваете свою способность работать над поставленными целями с помощью коуча? </label>
+                    <textarea rows="4" name="goal_work_ability" id="goal_work_ability" placeholder="Оцените свои способности достигать целей с поддержкой коуча" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какой Вы видите свою профессиональную карьеру через 3 года после выпуска? </label>
+                    <textarea rows="4" name="career_3_years" id="career_3_years" placeholder="Опишите, кем Вы видите себя через 3 года после окончания университета" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие три главные цели Вы ставите перед собой в первые 2 года работы? </label>
+                    <textarea rows="4" name="work_goals" id="work_goals" placeholder="Опишите ваши карьерные цели" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что для Вас важно в будущей профессии (например, стабильность, развитие, творчество)? </label>
+                    <textarea rows="4" name="profession_values" id="profession_values" placeholder="Укажите важные для вас качества будущей профессии" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Есть ли у Вас пример профессионала, на которого вы равняетесь? Если да, то почему? </label>
+                    <textarea rows="4" name="professional_role_model" id="professional_role_model" placeholder="Опишите, кто и почему служит для вас примером в профессии" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какую область знаний или навыков Вы хотите углубить после университета? </label>
+                    <textarea rows="4" name="skills_to_deepen" id="skills_to_deepen" placeholder="Укажите навыки или области, которые вы хотите развивать" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие сильные стороны Вашей личности могут помочь Вам в профессиональной карьере? </label>
+                    <textarea rows="4" name="strengths" id="strengths" placeholder="Опишите свои сильные стороны" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что Вас ограничивает в достижении карьерных целей (например, опыт, ресурсы)? </label>
+                    <textarea rows="4" name="career_limitations" id="career_limitations" placeholder="Опишите барьеры и ограничения на пути к вашим карьерным целям" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие качества работодателей для Вас важны? </label>
+                    <textarea rows="4" name="employer_qualities" id="employer_qualities" placeholder="Какие качества вы цените в работодателе или компании" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие альтернативные карьерные пути Вас интересуют, кроме работы по специальности? </label>
+                    <textarea rows="4" name="alternative_paths" id="alternative_paths" placeholder="Перечислите альтернативные карьерные направления, которые вас привлекают" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие шаги Вы могли бы предпринять для улучшения своих профессиональных навыков? </label>
+                    <textarea rows="4" name="skill_improvement_steps" id="skill_improvement_steps" placeholder="Опишите действия, которые помогут вам развить профессиональные навыки" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы проходили? </label>
+                    <textarea rows="4" name="courses_taken" id="courses_taken" placeholder="Перечислите курсы, которые вы прошли" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие профессиональные курсы или тренинги Вы бы хотели пройти? </label>
+                    <textarea rows="4" name="courses_wanted" id="courses_wanted" placeholder="Какие курсы вас интересуют?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> С какими организациями или профессионалами Вы хотели бы наладить контакты? </label>
+                    <textarea rows="4" name="desired_connections" id="desired_connections" placeholder="Перечислите компании или людей, с которыми хотели бы сотрудничать" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какой формат работы Вы предпочитаете: офис, удаленная работа, фриланс? </label>
+                    <textarea rows="4" name="work_format" id="work_format" placeholder="Опишите предпочитаемый формат работы" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что Вы готовы предпринять в течение следующего месяца для развития своей карьеры? </label>
+                    <textarea rows="4" name="next_month_steps" id="next_month_steps" placeholder="Опишите шаги, которые Вы готовы сделать" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-radio-wrapper">
+                    <label class="formbold-form-label"> Отслеживаете ли Вы свой прогресс в достижении цели? </label>
+                    <div class="formbold-radio-flex">
+                        <label class="formbold-radio-label"><input type="radio" name="track_progress" value="yes" required /> Да</label>
+                        <label class="formbold-radio-label"><input type="radio" name="track_progress" value="no" required /> Нет</label>
+                    </div>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы планируете отслеживать прогресс в достижении целей? </label>
+                    <textarea rows="4" name="progress_tracking_method" id="progress_tracking_method" placeholder="Опишите, как Вы будете отслеживать свой прогресс" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие ресурсы (время, деньги, наставники) Вы готовы вложить в свое развитие? </label>
+                    <textarea rows="4" name="resources_for_growth" id="resources_for_growth" placeholder="Опишите, какие ресурсы Вы готовы вложить в карьеру" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы справляетесь со своими неудачами и/или промахами? </label>
+                    <textarea rows="4" name="failure_handling" id="failure_handling" placeholder="Опишите Ваши стратегии справления с неудачами" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы будете справляться с неудачами на профессиональном пути? </label>
+                    <textarea rows="4" name="career_failure_response" id="career_failure_response" placeholder="Как Вы планируете справляться с неудачами в будущем?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы представляете свой первый шаг к карьере? </label>
+                    <textarea rows="4" name="career_first_step" id="career_first_step" placeholder="Опишите, с чего Вы начнёте карьеру" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Вспомните ситуацию, в которой Вы оказались лидером. Как Вы справились? </label>
+                    <textarea rows="4" name="leadership_example" id="leadership_example" placeholder="Опишите ситуацию, где Вы проявили лидерство" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Были ли ситуации, когда Вам пришлось работать с ограниченными ресурсами? </label>
+                    <textarea rows="4" name="limited_resources" id="limited_resources" placeholder="Опишите, как Вы справлялись с нехваткой времени, бюджета или других ресурсов" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> С какой наиболее сложной задачей Вы можете столкнуться в ближайшие 2 года? </label>
+                    <textarea rows="4" name="future_challenge" id="future_challenge" placeholder="Опишите возможные сложности на карьерном пути" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какую личную цель Вы достигли за последний год? </label>
+                    <textarea rows="4" name="personal_goal" id="personal_goal" placeholder="Опишите ваше главное личное достижение" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы определяете приоритеты при решении нескольких задач? </label>
+                    <textarea rows="4" name="task_prioritization" id="task_prioritization" placeholder="Опишите вашу стратегию определения приоритетов" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие действия Вы предпринимаете, чтобы справляться с трудностями при решении задач? </label>
+                    <textarea rows="4" name="problem_solving" id="problem_solving" placeholder="Опишите подход к преодолению сложностей" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие стратегии Вы используете для решения нестандартных задач? </label>
+                    <textarea rows="4" name="creative_strategies" id="creative_strategies" placeholder="Опишите, как Вы решаете нестандартные задачи" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Легко ли Вы применяете новые навыки для выполнения важных задач? </label>
+                    <textarea rows="4" name="applying_new_skills" id="applying_new_skills" placeholder="Приведите пример применения нового навыка" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы адаптируетесь к изменениям в условиях работы или обучения? </label>
+                    <textarea rows="4" name="adaptability" id="adaptability" placeholder="Опишите ваш подход к адаптации к изменениям" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы решаете конфликтные ситуации? </label>
+                    <textarea rows="4" name="conflict_resolution" id="conflict_resolution" placeholder="Опишите вашу стратегию урегулирования конфликтов" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие уроки Вы извлекли из своих успехов и ошибок? </label>
+                    <textarea rows="4" name="lessons_learned" id="lessons_learned" placeholder="Опишите, чему Вы научились благодаря успехам и ошибкам" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какой результат Вашей работы вызывает у Вас наибольшую гордость? </label>
+                    <textarea rows="4" name="proud_result" id="proud_result" placeholder="Опишите результат, которым Вы особенно гордитесь" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие выводы из прошлого опыта помогут Вам в будущей карьере? </label>
+                    <textarea rows="4" name="experience_insights" id="experience_insights" placeholder="Опишите, что из прошлого поможет Вам в будущем" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что в будущей работе может приносить Вам наибольшее удовольствие? </label>
+                    <textarea rows="4" name="job_pleasure" id="job_pleasure" placeholder="Опишите, что будет радовать Вас в работе" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие качества работы помогут Вам поддерживать позитивный настрой? </label>
+                    <textarea rows="4" name="positive_factors" id="positive_factors" placeholder="Что помогает сохранять мотивацию и радость от работы?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что Вы делаете, чтобы справляться с тревогой перед неизвестным? </label>
+                    <textarea rows="4" name="anxiety_coping" id="anxiety_coping" placeholder="Опишите, как Вы справляетесь с тревогой и неопределённостью" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> В каких задачах Вы чувствуете себя наиболее увлеченным и сосредоточенным? </label>
+                    <textarea rows="4" name="flow_tasks" id="flow_tasks" placeholder="Опишите, какие задачи вызывают у Вас полное погружение" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие навыки Вы хотите освоить, чтобы чувствовать себя более уверенно? </label>
+                    <textarea rows="4" name="skills_for_confidence" id="skills_for_confidence" placeholder="Опишите, какие навыки Вам хочется развить" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Что Вас вдохновляет на достижение высокого уровня профессионализма? </label>
+                    <textarea rows="4" name="professional_inspiration" id="professional_inspiration" placeholder="Что мотивирует Вас к профессиональному росту?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы оцениваете свои навыки в выполнении задач, требующих высокой вовлеченности? </label>
+                    <textarea rows="4" name="focus_skill_assessment" id="focus_skill_assessment" placeholder="Опишите свою способность работать с высокой концентрацией и ответственностью" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы строите профессиональные или учебные отношения с коллегами и/или сокурсниками? </label>
+                    <textarea rows="4" name="relationship_building" id="relationship_building" placeholder="Расскажите о своём взаимодействии с коллегами и одногруппниками" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Вы планируете наладить контакты в новой профессиональной среде? </label>
+                    <textarea rows="4" name="networking_plan" id="networking_plan" placeholder="Опишите, как Вы будете строить профессиональные связи" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> В чем для Вас смысл работы в Вашей профессиональной области? </label>
+                    <textarea rows="4" name="career_meaning" id="career_meaning" placeholder="Что вдохновляет Вас в Вашей профессии?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Как Ваши карьерные цели соотносятся с Вашими личными ценностями? </label>
+                    <textarea rows="4" name="career_values_alignment" id="career_values_alignment" placeholder="Опишите связь между карьерой и личными убеждениями" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Почему выбранная Вами профессия кажется Вам важной? </label>
+                    <textarea rows="4" name="profession_importance" id="profession_importance" placeholder="Что делает Вашу профессию значимой для Вас?" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие задачи Вы считаете наиболее значимыми в своей будущей работе? </label>
+                    <textarea rows="4" name="important_tasks" id="important_tasks" placeholder="Опишите ключевые задачи в будущей профессии" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие навыки Вы развили и продолжаете развивать, чтобы достичь своих целей? </label>
+                    <textarea rows="4" name="skills_development" id="skills_development" placeholder="Расскажите о навыках, которые Вы развиваете" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какой вклад в командные проекты Вы считаете самым успешным? </label>
+                    <textarea rows="4" name="team_contribution" id="team_contribution" placeholder="Опишите вклад, которым гордитесь" class="formbold-form-input" required></textarea>
+                </div>
+                
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label"> Какие новые высоты Вы хотите покорить в своей будущей карьере? </label>
+                    <textarea rows="4" name="career_goals" id="career_goals" placeholder="Опишите ваши амбиции и карьерные вершины" class="formbold-form-input" required></textarea>
+                </div>
+                
+
                 <button class="formbold-btn">Сохранить</button>
+                
             </form>
+        </div> 
+    </div>
+    
+    <script src="{{url_for('static', path='js/scripts.js') }}"></script>
+
+<div class="modal" id="m-loading">
+    <div class="modal-content" >
+        <div class="modal-header">
+            <h2>Пожалуйста , подождите</h2>
+          </div>
+        <div class="modal-body">
+            <div class = 'loader'></div>
+        </div>
+        <div class="modal-footer">
+            <h3>Генерация отчета займет не дольше 10 секунд</h3>
         </div>
     </div>
     
+</div>
+    
+
 </body>
+
 </html>
