@@ -1,4 +1,3 @@
-from configparser import ConfigParser
 from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI, Request, Form, status
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
@@ -17,13 +16,15 @@ from database import SessionLocal, engine
 from models import Base , SurveyResponse
 from passlib.context import CryptContext
 from pydantic import BaseModel
+from config import Config
+
+config = Config()
 
 templates = Jinja2Templates(directory="templates")
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="templates/static"), name="static")
-config = ConfigParser()
-config.read("conf.ini")
+
 pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
 
 def get_db():
@@ -95,7 +96,7 @@ async def get_js_portrait(request: Request, db: Session = Depends(get_db)):
     cv = CV()
     portrait = cv.get_portrait(str(answers))
 
-    
+
     # users satisfaction
     total_users = db.query(SurveyResponse).count()
     total = db.query(SurveyResponse).filter(SurveyResponse.was_satisfied != None).count()
@@ -192,8 +193,8 @@ async def login_form(request: Request):
 
 @app.post("/login")
 async def login(request: Request, login: str = Form(...), password: str = Form(...)):
-    correct_login = config["USER"].get("login")
-    password_hash = config["USER"].get("password")
+    correct_login = config.LOGIN_USER
+    password_hash = config.LOGIN_PASSWORD_HASH
 
     if login == correct_login and password == password_hash:
         response = RedirectResponse(url="/portrait", status_code=status.HTTP_302_FOUND)

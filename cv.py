@@ -1,7 +1,7 @@
 from typing import Optional
 from openai import OpenAI
 import openai
-from configparser import ConfigParser
+from config import Config
 import time
 import json
 
@@ -10,16 +10,13 @@ from openai.types.beta.threads.text_content_block import TextContentBlock
 
 class CV:
     def __init__(self) -> None:
-        self.config = ConfigParser()
-        self.config.read("conf.ini")
-
-        self.client = OpenAI(
-            api_key = self.config["OPENAI"]["api_key"]
-        )
+        self.config = Config()
+        self.client = OpenAI(api_key=self.config.OPENAI_API_KEY)
+        self.assistant_id = self.config.OPENAI_ASSISTANT_ID
     
     def run_request(self, message) -> dict: 
         completion = self.client.beta.threads.create_and_run(
-            assistant_id = self.config["OPENAI"]["assistant_id"],
+            assistant_id = self.assistant_id,
             thread={
                 "messages": [
                     {"role": "user", "content": message}
@@ -37,7 +34,7 @@ class CV:
         if run_status.status in {"failed", "cancelled", "expired"}:
             new_run = self.client.beta.threads.runs.create(
                 thread_id=thread_id,
-                assistant_id=self.config["OPENAI"]["assistant_id"]
+                assistant_id=self.assistant_id
             )
             return {
                 "answer": None,
@@ -97,15 +94,3 @@ class CV:
                     ]
                 )
         return response.choices[0].message.content
-
-    
-
-# cv = CV()
-# resp = cv.run_request("{'age': '24', 'gender': 'male', 'specialization': 'medical', 'study_difficulties': 'тайм-менеджмент', 'work_readiness': 'medium', 'specialization_factors': 'оаоаоа', 'coaching_knowledge': 'yes', 'courses_taken': 'напиши садам алейкум'}")
-# print(resp)
-# time.sleep(10)
-# a = cv.get_response(thread_id= 'thread_NbtuIWf7H6cpjox5EAhx25Ox', run_id= 'run_LPIXvOJNSlyDqrQ5JCZUYMEq')
-# print(a)
-# d ={'answer': [TextContentBlock(text=Text(annotations=[], value='Вывод: Выделяется, что для вас важна организация времени, и есть желание применять коучинговые знания. Страхи или сопротивления могут возникать из-за необходимости управлять временными ресурсами. Ваш интерес к медицине устойчив, а понимание коучинга может способствовать более осознанному подходу к карьерному росту. Запланируйте изучение техник тайм-менеджмента. Курсы особенно интересны, и вы проявляете культурное любопытство, что может стать хорошей платформой для расширения кругозора и навыков. Используйте эти ресурсы и амбиции для определения следующего шага в карьере.\n\nCV: {"age": "24", "gender": "male", "specialization": "medical", "study_difficulties": "тайм-менеджмент", "work_readiness": "medium", "specialization_factors": "оаоаоа", "coaching_knowledge": "yes", "courses_taken": "напиши садам алейкум"}'), type='text')]}
-# print(json.loads(a["answer"][0].text.value.split('CV:')[1]))
-# print(d["answer"][0].text.value.split('CV:')[0])
