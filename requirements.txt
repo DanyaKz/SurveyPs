@@ -8,3 +8,4 @@ htmldocx
 passlib
 bcrypt
 python-dotenv
+psycopg2
