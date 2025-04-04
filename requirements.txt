@@ -5,3 +5,5 @@ openai
 sqlalchemy
 python-docx
 htmldocx
+passlib
+bcrypt
